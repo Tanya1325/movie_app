@@ -62,7 +62,6 @@ class Dates {
 class Results {
   bool? adult;
   String? backdropPath;
-  List<int>? genreIds;
   int? id;
   String? originalLanguage;
   String? originalTitle;
@@ -78,7 +77,6 @@ class Results {
   Results(
       {this.adult,
         this.backdropPath,
-        this.genreIds,
         this.id,
         this.originalLanguage,
         this.originalTitle,
@@ -94,7 +92,6 @@ class Results {
   Results.fromJson(Map<String, dynamic> json) {
     adult = json['adult'];
     backdropPath = json['backdrop_path'];
-    genreIds = json['genre_ids'].cast<int>();
     id = json['id'];
     originalLanguage = json['original_language'];
     originalTitle = json['original_title'];
@@ -112,7 +109,6 @@ class Results {
     final Map<String, dynamic> data = {};
     data['adult'] = adult;
     data['backdrop_path'] = backdropPath;
-    data['genre_ids'] = genreIds;
     data['id'] = id;
     data['original_language'] = originalLanguage;
     data['original_title'] = originalTitle;

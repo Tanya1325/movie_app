@@ -16,21 +16,21 @@ class HomepageRepositoryImp extends HomepageRepository {
   @override
   Future<UpcomingMovies> getUpcomingMovies() async {
     UpcomingMovies response =
-        await ApiClient(Dio()).fetchUpcomingMovies(AppConstants.apiKey);
+        await ApiClient(Dio()).fetchUpcomingMovies(AppConstants.apiKey,"en","in");
     return response;
   }
 
   @override
   Future<TrendingMovies> getTrendingMovies() async {
     TrendingMovies response =
-        await ApiClient(Dio()).fetchTrendingMovies(AppConstants.apiKey);
+        await ApiClient(Dio()).fetchTrendingMovies(AppConstants.apiKey,"en","in");
     return response;
   }
 
   @override
   Future<UpcomingMovies> getPopularMovies() async {
     UpcomingMovies response =
-        await ApiClient(Dio()).fetchPopularMovies(AppConstants.apiKey);
+        await ApiClient(Dio()).fetchPopularMovies(AppConstants.apiKey,"en","in");
     return response;
   }
 }

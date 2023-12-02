@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:movie_app/data_models/movie_details_data_model/movie_details_data_model.dart';
 
 import 'movie_details_repo.dart';
 
@@ -15,10 +16,10 @@ class MovieDetailsBloc extends Bloc<MovieDetailsEvent, MovieDetailsState> {
     on<MovieDetailsEvent>((event, emit) async {
       emit(MovieDetailsInitialState());
       if (event is MovieDetailsFetchEvent) {
-        var model = await movieDetailsRepositoryImp?.getMovieDetailData();
+        var model = await movieDetailsRepositoryImp?.getMovieDetailData(event.movieId);
         try {
           if (model != null) {
-            emit(MovieDetailsFetchSuccessState());
+            emit(MovieDetailsFetchSuccessState(model));
           } else {
             emit(MovieDetailsErrorState(''));
           }

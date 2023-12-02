@@ -5,7 +5,11 @@ abstract class MovieDetailsState {}
 
 class MovieDetailsInitialState extends MovieDetailsState {}
 
-class MovieDetailsFetchSuccessState extends MovieDetailsState {}
+class MovieDetailsFetchSuccessState extends MovieDetailsState {
+  final MovieDetailsDataModel? model;
+
+  MovieDetailsFetchSuccessState(this.model);
+}
 
 class MovieDetailsErrorState extends MovieDetailsState {
   final String? message;

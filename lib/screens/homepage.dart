@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:movie_app/bloc/homepage/homepage_bloc.dart';
+import 'package:movie_app/bloc/movie_details/movie_details_bloc.dart';
+import 'package:movie_app/bloc/movie_details/movie_details_repo.dart';
 import 'package:movie_app/data_models/homepage_data_model/trending_movies_response_data_model.dart';
 import 'package:movie_app/data_models/homepage_data_model/upcoming_movies_response_data_model.dart';
+import 'package:movie_app/screens/homepage_tabs_widget.dart';
 import 'package:movie_app/utils/index.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -85,10 +88,14 @@ class _HomepageState extends State<Homepage> {
                             itemBuilder: (context, index) {
                               return GestureDetector(
                                   onTap: () {
-                                    Navigator.of(context).push(
-                                        MaterialPageRoute(
-                                            builder: (context) =>
-                                                const MovieDetailsScreen()));
+                                    Navigator.of(context).push(MaterialPageRoute(
+                                        builder: (context) => BlocProvider(
+                                            create: (create) => MovieDetailsBloc(
+                                                movieDetailsRepositoryImp:
+                                                    MovieDetailsRepositoryImp()),
+                                            child: MovieDetailsScreen(
+                                                movieId: upcomingMovies
+                                                    ?.results?[index].id))));
                                   },
                                   child: MovieCardWidget(
                                     results: upcomingMovies?.results?[index],
@@ -116,10 +123,14 @@ class _HomepageState extends State<Homepage> {
                             itemBuilder: (context, index) {
                               return GestureDetector(
                                   onTap: () {
-                                    Navigator.of(context).push(
-                                        MaterialPageRoute(
-                                            builder: (context) =>
-                                                const MovieDetailsScreen()));
+                                    Navigator.of(context).push(MaterialPageRoute(
+                                        builder: (context) => BlocProvider(
+                                            create: (create) => MovieDetailsBloc(
+                                                movieDetailsRepositoryImp:
+                                                MovieDetailsRepositoryImp()),
+                                            child: MovieDetailsScreen(
+                                                movieId: upcomingMovies
+                                                    ?.results?[index].id))));
                                   },
                                   child: MovieCardWidget(
                                     results: trendingMovies?.results?[index],
@@ -147,10 +158,14 @@ class _HomepageState extends State<Homepage> {
                             itemBuilder: (context, index) {
                               return GestureDetector(
                                   onTap: () {
-                                    Navigator.of(context).push(
-                                        MaterialPageRoute(
-                                            builder: (context) =>
-                                                const MovieDetailsScreen()));
+                                    Navigator.of(context).push(MaterialPageRoute(
+                                        builder: (context) => BlocProvider(
+                                            create: (create) => MovieDetailsBloc(
+                                                movieDetailsRepositoryImp:
+                                                MovieDetailsRepositoryImp()),
+                                            child: MovieDetailsScreen(
+                                                movieId: upcomingMovies
+                                                    ?.results?[index].id))));
                                   },
                                   child: MovieCardWidget(
                                     results: popularMovies?.results?[index],
@@ -165,6 +180,7 @@ class _HomepageState extends State<Homepage> {
                     ),
                   ),
                 );
-        }));
+        }),
+    );
   }
 }

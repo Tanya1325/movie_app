@@ -8,8 +8,6 @@ class MovieCardWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print(
-        "Image-->${"https://image.tmdb.org/t/p/w500/${results?.posterPath ?? ""}"}");
     return Card(
       color: Colors.red,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.0)),
