@@ -138,16 +138,15 @@ class _MovieDetailsScreenState extends State<MovieDetailsScreen>
                                         'assets/images/play-button.png',
                                         color: Colors.black,
                                       ),
-                                      const Padding(
-                                        padding: EdgeInsets.symmetric(
+                                      Padding(
+                                        padding: const EdgeInsets.symmetric(
                                             horizontal: 8.0),
-                                        child: Text(
-                                          StringConstants.play,
-                                          style: TextStyle(
-                                              color: Colors.black,
-                                              fontSize: 16.0,
-                                              fontWeight: FontWeight.bold),
-                                        ),
+                                        child: Text(StringConstants.play,
+                                            style: Theme.of(context)
+                                                .textTheme
+                                                .titleMedium
+                                                ?.copyWith(
+                                                    color: Colors.black)),
                                       ),
                                     ]))),
                         const SmallSpacingWidget(),
@@ -164,15 +163,13 @@ class _MovieDetailsScreenState extends State<MovieDetailsScreen>
                                     Image.asset(
                                       'assets/images/download.png',
                                     ),
-                                    const Padding(
-                                      padding:
-                                          EdgeInsets.symmetric(horizontal: 8.0),
-                                      child: Text(
-                                        StringConstants.download,
-                                        style: TextStyle(
-                                            fontSize: 16.0,
-                                            fontWeight: FontWeight.bold),
-                                      ),
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                          horizontal: 8.0),
+                                      child: Text(StringConstants.download,
+                                          style: Theme.of(context)
+                                              .textTheme
+                                              .titleMedium),
                                     ),
                                   ],
                                 ))),
