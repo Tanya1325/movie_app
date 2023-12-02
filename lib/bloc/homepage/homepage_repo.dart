@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:movie_app/data_models/homepage_data_model/popular_movies_response_data_model.dart';
 import 'package:movie_app/data_models/homepage_data_model/trending_movies_response_data_model.dart';
 import 'package:movie_app/data_models/homepage_data_model/upcoming_movies_response_data_model.dart';
 import 'package:movie_app/services/api_client.dart';
@@ -9,7 +10,7 @@ abstract class HomepageRepository {
 
   Future<TrendingMovies> getTrendingMovies();
 
-  Future<UpcomingMovies> getPopularMovies();
+  Future<PopularMovies> getPopularMovies();
 }
 
 class HomepageRepositoryImp extends HomepageRepository {
@@ -28,8 +29,8 @@ class HomepageRepositoryImp extends HomepageRepository {
   }
 
   @override
-  Future<UpcomingMovies> getPopularMovies() async {
-    UpcomingMovies response =
+  Future<PopularMovies> getPopularMovies() async {
+    PopularMovies response =
         await ApiClient(Dio()).fetchPopularMovies(AppConstants.apiKey,"en","in");
     return response;
   }

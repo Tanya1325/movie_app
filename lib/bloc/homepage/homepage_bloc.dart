@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:movie_app/data_models/homepage_data_model/popular_movies_response_data_model.dart';
 import 'package:movie_app/data_models/homepage_data_model/trending_movies_response_data_model.dart';
 import 'package:movie_app/data_models/homepage_data_model/upcoming_movies_response_data_model.dart';
 import 'homepage_repo.dart';

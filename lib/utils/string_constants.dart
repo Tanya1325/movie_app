@@ -1,4 +1,4 @@
-class StringConstants{
+class StringConstants {
   static const String nowTrending = "Now Trending";
   static const String popular = "Popular";
   static const String upcoming = "Upcoming";
@@ -8,6 +8,9 @@ class StringConstants{
   static const String rate = "Rate";
   static const String share = "Share";
   static const String moreLikeThis = "More Like This";
-  static const String trailers = "Trailers & More";
-
+  static const String downloads = "My Downloads";
+  static const String myAccount = "My Account";
+  static const String videos = "Videos";
+  static const String home = "Home";
+  static const String search = "Search";
 }

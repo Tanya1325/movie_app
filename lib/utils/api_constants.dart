@@ -4,5 +4,4 @@ class APIConstants{
   static const String trendingMovies = 'trending/all/day';
   static const String upcomingMovies = 'movie/upcoming';
   static const String popularMovies = 'movie/popular';
-  static const String similarMovies = 'movie/{movie_id}/similar';
 }

@@ -14,7 +14,7 @@ class MovieCardWidget extends StatelessWidget {
       child: ClipRRect(
           borderRadius: BorderRadius.circular(8.0),
           child: Image.network(
-            "https://image.tmdb.org/t/p/w500/${results?.posterPath ?? ""}",
+            "https://image.tmdb.org/t/p/w500/${results?.posterPath ?? results?.backdropPath}",
             fit: BoxFit.cover,
           )),
     );

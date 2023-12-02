@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:movie_app/data_models/homepage_data_model/popular_movies_response_data_model.dart';
 import 'package:movie_app/data_models/homepage_data_model/trending_movies_response_data_model.dart';
 import 'package:movie_app/data_models/homepage_data_model/upcoming_movies_response_data_model.dart';
 import 'package:movie_app/utils/api_constants.dart';
@@ -30,7 +31,7 @@ abstract class ApiClient {
   );
 
   @GET(APIConstants.popularMovies)
-  Future<UpcomingMovies> fetchPopularMovies(
+  Future<PopularMovies> fetchPopularMovies(
     @Query('api_key') String apiKey,
     @Query('language') String language,
     @Query('region') String region,

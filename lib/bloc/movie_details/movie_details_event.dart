@@ -7,3 +7,8 @@ class MovieDetailsFetchEvent extends MovieDetailsEvent{
   final int? movieId;
   MovieDetailsFetchEvent(this.movieId);
 }
+
+class SimilarMoviesFetchEvent extends MovieDetailsEvent{
+  final int? movieId;
+  SimilarMoviesFetchEvent(this.movieId);
+}

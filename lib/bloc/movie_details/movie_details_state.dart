@@ -11,6 +11,11 @@ class MovieDetailsFetchSuccessState extends MovieDetailsState {
   MovieDetailsFetchSuccessState(this.model);
 }
 
+class SimilarMoviesFetchSuccessState extends MovieDetailsState {
+  final UpcomingMovies? movies;
+  SimilarMoviesFetchSuccessState(this.movies);
+}
+
 class MovieDetailsErrorState extends MovieDetailsState {
   final String? message;
 

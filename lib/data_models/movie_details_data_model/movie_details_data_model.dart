@@ -58,13 +58,13 @@ class MovieDetailsDataModel {
     adult = json['adult'];
     backdropPath = json['backdrop_path'];
     belongsToCollection = json['belongs_to_collection'] != null
-        ? new BelongsToCollection.fromJson(json['belongs_to_collection'])
+        ? BelongsToCollection.fromJson(json['belongs_to_collection'])
         : null;
     budget = json['budget'];
     if (json['genres'] != null) {
       genres = <Genres>[];
       json['genres'].forEach((v) {
-        genres!.add(new Genres.fromJson(v));
+        genres!.add(Genres.fromJson(v));
       });
     }
     homepage = json['homepage'];
@@ -78,13 +78,13 @@ class MovieDetailsDataModel {
     if (json['production_companies'] != null) {
       productionCompanies = <ProductionCompanies>[];
       json['production_companies'].forEach((v) {
-        productionCompanies!.add(new ProductionCompanies.fromJson(v));
+        productionCompanies!.add(ProductionCompanies.fromJson(v));
       });
     }
     if (json['production_countries'] != null) {
       productionCountries = <ProductionCountries>[];
       json['production_countries'].forEach((v) {
-        productionCountries!.add(new ProductionCountries.fromJson(v));
+        productionCountries!.add(ProductionCountries.fromJson(v));
       });
     }
     releaseDate = json['release_date'];
@@ -93,7 +93,7 @@ class MovieDetailsDataModel {
     if (json['spoken_languages'] != null) {
       spokenLanguages = <SpokenLanguages>[];
       json['spoken_languages'].forEach((v) {
-        spokenLanguages!.add(new SpokenLanguages.fromJson(v));
+        spokenLanguages!.add(SpokenLanguages.fromJson(v));
       });
     }
     status = json['status'];
@@ -134,12 +134,12 @@ class MovieDetailsDataModel {
     data['release_date'] = releaseDate;
     data['revenue'] = revenue;
     data['runtime'] = runtime;
-    if (this.spokenLanguages != null) {
+    if (spokenLanguages != null) {
       data['spoken_languages'] =
-          this.spokenLanguages!.map((v) => v.toJson()).toList();
+          spokenLanguages!.map((v) => v.toJson()).toList();
     }
-    data['status'] = this.status;
-    data['tagline'] = this.tagline;
+    data['status'] = status;
+    data['tagline'] = tagline;
     data['title'] = title;
     data['video'] = video;
     data['vote_average'] = voteAverage;
@@ -166,11 +166,11 @@ class BelongsToCollection {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['id'] = this.id;
-    data['name'] = this.name;
-    data['poster_path'] = this.posterPath;
-    data['backdrop_path'] = this.backdropPath;
+    final Map<String, dynamic> data = {};
+    data['id'] = id;
+    data['name'] = name;
+    data['poster_path'] = posterPath;
+    data['backdrop_path'] = backdropPath;
     return data;
   }
 }
@@ -188,8 +188,8 @@ class Genres {
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = {};
-    data['id'] = this.id;
-    data['name'] = this.name;
+    data['id'] = id;
+    data['name'] = name;
     return data;
   }
 }
@@ -261,15 +261,15 @@ class SpokenLanguages {
 }
 
 class Videos {
-  List<Results>? results;
+  List<VideoResults>? results;
 
   Videos({this.results});
 
   Videos.fromJson(Map<String, dynamic> json) {
     if (json['results'] != null) {
-      results = <Results>[];
+      results = <VideoResults>[];
       json['results'].forEach((v) {
-        results!.add(Results.fromJson(v));
+        results!.add(VideoResults.fromJson(v));
       });
     }
   }
@@ -283,7 +283,7 @@ class Videos {
   }
 }
 
-class Results {
+class VideoResults {
   String? iso6391;
   String? iso31661;
   String? name;
@@ -295,7 +295,7 @@ class Results {
   String? publishedAt;
   String? id;
 
-  Results(
+  VideoResults(
       {this.iso6391,
         this.iso31661,
         this.name,
@@ -307,7 +307,7 @@ class Results {
         this.publishedAt,
         this.id});
 
-  Results.fromJson(Map<String, dynamic> json) {
+  VideoResults.fromJson(Map<String, dynamic> json) {
     iso6391 = json['iso_639_1'];
     iso31661 = json['iso_3166_1'];
     name = json['name'];

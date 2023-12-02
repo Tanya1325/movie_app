@@ -18,7 +18,7 @@ class HomepageUpcomingMoviesSuccessState extends HomepageState {
 }
 
 class HomepagePopularMoviesSuccessState extends HomepageState {
-  final UpcomingMovies? popularMovies;
+  final PopularMovies? popularMovies;
 
   HomepagePopularMoviesSuccessState(this.popularMovies);
 }
