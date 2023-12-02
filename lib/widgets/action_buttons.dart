@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:movie_app/utils/string_constants.dart';
+import 'package:movie_app/utils/index.dart';
 
 class ActionButtons extends StatelessWidget {
   const ActionButtons({super.key});

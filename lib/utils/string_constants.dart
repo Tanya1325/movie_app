@@ -1,7 +1,7 @@
 class StringConstants{
   static const String nowTrending = "Now Trending";
-  static const String feelGoodMovies = "Feel-good Movies";
-  static const String realLifeMovies = "Movies based on Real Life";
+  static const String popular = "Popular";
+  static const String upcoming = "Upcoming";
   static const String play = "Play";
   static const String download = "Download";
   static const String myList = "My List";

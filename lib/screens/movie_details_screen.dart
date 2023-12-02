@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:movie_app/utils/string_constants.dart';
-import 'package:movie_app/widgets/action_buttons.dart';
-import 'package:movie_app/widgets/movie_card_widget.dart';
-import 'package:movie_app/widgets/spacing_widget.dart';
+import 'package:movie_app/utils/index.dart';
 
 class MovieDetailsScreen extends StatefulWidget {
-  const MovieDetailsScreen({super.key});
+  final String? movieId;
+  const MovieDetailsScreen({super.key, this.movieId});
 
   @override
   State<MovieDetailsScreen> createState() => _MovieDetailsScreenState();

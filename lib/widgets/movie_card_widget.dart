@@ -1,19 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:movie_app/data_models/homepage_data_model/upcoming_movies_response_data_model.dart';
 
 class MovieCardWidget extends StatelessWidget {
-  const MovieCardWidget({super.key});
+  final Results? results;
+
+  const MovieCardWidget({super.key, this.results});
 
   @override
   Widget build(BuildContext context) {
+    print(
+        "Image-->${"https://image.tmdb.org/t/p/w500/${results?.posterPath ?? ""}"}");
     return Card(
       color: Colors.red,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.0)),
       child: ClipRRect(
-        borderRadius: BorderRadius.circular(8.0),
+          borderRadius: BorderRadius.circular(8.0),
           child: Image.network(
-        'https://bst.icons8.com/wp-content/themes/icons8/app/uploads/2019/05/poster-for-movie.png',
-        fit: BoxFit.cover,
-      )),
+            "https://image.tmdb.org/t/p/w500/${results?.posterPath ?? ""}",
+            fit: BoxFit.cover,
+          )),
     );
   }
 }
