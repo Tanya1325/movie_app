@@ -13,4 +13,6 @@ class StringConstants {
   static const String videos = "Videos";
   static const String home = "Home";
   static const String search = "Search";
+  static const String downloadedMovies = "Downloaded Movies";
+  static const String viewAll = "View All";
 }

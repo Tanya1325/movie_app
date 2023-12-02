@@ -9,7 +9,7 @@ class MovieCardWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: Colors.red,
+      color: Colors.black12,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.0)),
       child: ClipRRect(
           borderRadius: BorderRadius.circular(8.0),

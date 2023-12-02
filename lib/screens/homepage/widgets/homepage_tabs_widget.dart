@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:movie_app/screens/account_screen/my_account_screen.dart';
+import 'package:movie_app/screens/account_screen/screen/my_account_screen.dart';
 import 'package:movie_app/utils/index.dart';
 
 class HomepageTabsWidget extends StatefulWidget {

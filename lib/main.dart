@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:movie_app/screens/homepage/homepage_tabs_widget.dart';
+import 'package:movie_app/screens/homepage/widgets/homepage_tabs_widget.dart';
 import 'package:movie_app/utils/index.dart';
 import 'package:movie_app/utils/theme_data.dart';
 

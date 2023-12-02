@@ -1,9 +1,9 @@
-export 'package:movie_app/screens/movie_details/movie_details_screen.dart';
+export 'package:movie_app/screens/movie_details/screen/movie_details_screen.dart';
 export 'package:movie_app/utils/string_constants.dart';
 export 'package:movie_app/widgets/movie_card_widget.dart';
 export 'package:movie_app/widgets/spacing_widget.dart';
-export 'package:movie_app/widgets/action_buttons.dart';
-export 'package:movie_app/screens/homepage/homepage.dart';
+export 'package:movie_app/screens/movie_details/widgets/action_buttons.dart';
+export 'package:movie_app/screens/homepage/screen/homepage.dart';
 export 'package:movie_app/bloc/homepage/homepage_bloc.dart';
 export 'package:movie_app/bloc/homepage/homepage_repo.dart';
 export 'package:movie_app/bloc/movie_details/movie_details_bloc.dart';
